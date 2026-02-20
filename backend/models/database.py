@@ -123,6 +123,8 @@ def seed_data():
         ("PharmaCorp", "Amanda White", "amanda@pharma.com", "555-0108", "Pharma", 400000.0, "enterprise"),
         ("Small Retailer", "Chris Martin", "chris@smallretail.com", "555-0109", "Retail", 25000.0, "startup"),
         ("Tech Solutions Ltd", "Patricia Brown", "patricia@techsol.com", "555-0110", "Technology", 120000.0, "smb"),
+        ("Tiny Startup", "Mike Lee", "mike@tinystartup.com", "555-0111", "Retail", 5000.0, "startup"),
+        ("Mom Pop Store", "Susan Kim", "susan@mompop.com", "555-0112", "Retail", 8000.0, "startup"),
     ]
     
     cursor.executemany("""
