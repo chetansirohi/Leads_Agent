@@ -15,7 +15,7 @@ Author: HighLevel Application Engineer Candidate
 from typing import TypedDict, Optional, List
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.types import interrupt, Command  # NEW: Native interrupt support
+from langgraph.types import interrupt, Command 
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 import json
