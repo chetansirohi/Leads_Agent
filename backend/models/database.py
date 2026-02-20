@@ -3,10 +3,12 @@ from datetime import datetime
 from typing import List, Optional
 from models.schemas import Lead, LeadStatus, SalesRep, Assignment, HumanDecision, WorkflowState
 import json
+import os
 
 DB_PATH = "./data/lead_qualification.db"
 
 def init_db():
+    os.makedirs("./data", exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     
