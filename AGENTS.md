@@ -5,12 +5,14 @@ This document is for automated coding agents working in this repo. It summarizes
 
 **Repo Layout**
 - Root: `/Users/chetansirohi/Desktop/Revops`
-- App: `lead-qualification-mvp/`
-- Backend (FastAPI + LangGraph): `lead-qualification-mvp/backend`
-- Frontend (Next.js App Router + TS): `lead-qualification-mvp/frontend`
-- Architecture/docs/examples: `lead-qualification-mvp/examples`
+- Backend (FastAPI + LangGraph): `backend`
+- Frontend (Next.js App Router + TS): `frontend` (TBD - needs to be restored/recreated)
+- Architecture/docs/examples: `examples`
 
-There are currently **no Cursor (.cursor) or Copilot (.github/copilot-instructions.md) rules** in this repo.
+**NOTE:** The frontend folder was lost during repo restructuring. If you have a backup of the frontend files (from Time Machine or other backup), restore them to `./frontend`. Otherwise, recreate using:
+```bash
+npx create-next-app@latest frontend --typescript --tailwind --eslint --app --no-src-dir --import-alias "@/*"
+```
 
 **Environment & Services**
 - Python: 3.9–3.12 (do **not** assume 3.14 support).
@@ -21,7 +23,7 @@ There are currently **no Cursor (.cursor) or Copilot (.github/copilot-instructio
 ## Commands
 
 **Backend – Setup & Run**
-- From `lead-qualification-mvp/backend`:
+- From `backend`:
   - Create venv: `python3 -m venv venv`
   - Activate venv (macOS/Linux): `source venv/bin/activate`
   - Install deps: `pip install -r requirements.txt`
@@ -31,7 +33,7 @@ There are currently **no Cursor (.cursor) or Copilot (.github/copilot-instructio
 
 **Backend – Tests / Checks**
 - There is **no automated test suite** yet (no `pytest`/CI config).
-- Use `test_commands.sh` in `lead-qualification-mvp/` as the canonical manual test script.
+- Use `test_commands.sh` as the canonical manual test script.
   - Example single-endpoint test (health):
     - `curl http://localhost:8000/health | python3 -m json.tool`
   - Example single workflow test (lead 1):
@@ -43,7 +45,7 @@ There are currently **no Cursor (.cursor) or Copilot (.github/copilot-instructio
   - Run a single test function: `pytest backend/tests/test_workflow.py::test_human_review_flow`.
 
 **Frontend – Setup & Run**
-- From `lead-qualification-mvp/frontend`:
+- From `frontend`:
   - Install deps: `npm install`
   - Dev server: `npm run dev` (http://localhost:3000)
   - Production build: `npm run build`
